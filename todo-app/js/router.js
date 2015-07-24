@@ -3,6 +3,7 @@ Todos.Router.map(function () {
     // additional child routes will go here later
     this.route('active');
     this.route('completed');
+    this.route('all');
   });
 });
 
