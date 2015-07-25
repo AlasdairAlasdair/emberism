@@ -225,7 +225,7 @@
 
     createRecord: function (store, type, record) {
       var namespaceRecords = this._namespaceForType(type);
-      var recordHash = record.serialize({includeId: true});
+      var recordHash = record.record.serialize({includeId: true});
 
       namespaceRecords.records[recordHash.id] = recordHash;
 
@@ -237,7 +237,7 @@
       var namespaceRecords = this._namespaceForType(type);
       var id = record.get('id');
 
-      namespaceRecords.records[id] = record.serialize({ includeId: true });
+      namespaceRecords.records[id] = record.record.serialize({ includeId: true });
 
       this.persistData(type, namespaceRecords);
       return Ember.RSVP.resolve();
